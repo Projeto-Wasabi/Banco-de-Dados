@@ -43,12 +43,12 @@ CREATE TABLE safra_wasabi ( -- INFORMAÇÕES GERAIS SOBRE AS SAFRAS
     termino_estimado DATE NOT NULL,
 	max_luminosidade DECIMAL (6,2) NOT NULL,
     min_luminosidade DECIMAL (6,2) NOT NULL,
-	tipo_cultivo VARCHAR(30) 
+	tipo_cultivo VARCHAR(30) NOT NULL,
 		CONSTRAINT chkCultivo
-			CHECK (tipo_cultivo IN ('Tradicional', 'Estufa')) NOT NULL,
-    tipo_wasabi VARCHAR (40)
+			CHECK (tipo_cultivo IN ('Tradicional', 'Estufa')),
+    tipo_wasabi VARCHAR (40) NOT NULL,
 		CONSTRAINT chkTipoWasabi
-			CHECK (tipo_wasabi IN ('Eutrema Japonicum', 'Sawa Wasabi', 'Oka Wasabi')) NOT NULL
+			CHECK (tipo_wasabi IN ('Eutrema Japonicum', 'Sawa Wasabi', 'Oka Wasabi'))
 	);
     
 CREATE TABLE wasabi_daily ( -- DADOS COLETADOS EM CADA SAFRA
